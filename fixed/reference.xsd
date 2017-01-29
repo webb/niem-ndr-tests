@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<xs:schema
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument"
+  targetNamespace="http://example.org/ns1/"
+  xmlns:ns1="http://example.org/ns1/"
+  version="1"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>This is a schema for namespace 1.</xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+
+  <xs:complexType name="PickupTruckType">
+    <xs:annotation>
+      <xs:documentation>A data type for a pickup truck.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:VehicleType">
+        <xs:sequence>
+          <xs:element ref="ns1:PickupTruckAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="ns1:vehicleWindshieldQuantity" fixed="1" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:attribute name="vehicleWindshieldQuantity" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>A count of windshields on a vehicle</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <xs:element name="PickupTruck" type="ns1:PickupTruckType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A pickup truck.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="PickupTruckAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for a pickup truck.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+
+</xs:schema>

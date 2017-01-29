@@ -1,0 +1,32 @@
+#############################################################################
+# allow-all-chars/extension.xsd.ext.results.txt
+file allow-all-chars/extension.xsd.ext.results.txt -> rules ext on subject allow-all-chars/extension.xsd
+exit status: 0
+pass exit status: Expected exit status 0, got 0
+pass stdout: Actual stdout same as expected
+pass stderr: Actual stderr same as expected
+pass
+#############################################################################
+# allow-all-chars/extension.xsd.set.results.txt
+file allow-all-chars/extension.xsd.set.results.txt -> rules set on subject allow-all-chars/extension.xsd with XML catalog allow-all-chars/xml-catalog 
+exit status: 0
+pass exit status: Expected exit status 0, got 0
+pass stdout: Actual stdout same as expected
+pass stderr: Actual stderr same as expected
+pass
+#############################################################################
+# fixed/reference.xsd.ref.results.txt
+file fixed/reference.xsd.ref.results.txt -> rules ref on subject fixed/reference.xsd
+exit status: 0
+pass exit status: Expected exit status 0, got 0
+pass stdout: Actual stdout same as expected
+pass stderr: Actual stderr same as expected
+pass
+#############################################################################
+# fixed/reference.xsd.set.results.txt
+file fixed/reference.xsd.set.results.txt -> rules set on subject fixed/reference.xsd with XML catalog fixed/xml-catalog 
+exit status: 0
+pass exit status: Expected exit status 0, got 0
+pass stdout: Actual stdout same as expected
+pass stderr: Actual stderr same as expected
+pass

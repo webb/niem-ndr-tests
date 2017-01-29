@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<xs:schema
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  targetNamespace="http://example.org/ns1/"
+  version="1"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>This is a schema for namespace 1.</xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+
+  <xs:element name="Things_Count" type="niem-xs:integer" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of things.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="Things.Count" type="niem-xs:integer" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of things.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="Things-Count" type="niem-xs:integer" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of things.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

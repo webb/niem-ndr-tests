@@ -1,0 +1,7 @@
+<ns1:PickupTruck
+  xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+  xmlns:ns1="http://example.org/ns1/"
+  ns1:vehicleWindshieldQuantity="1">
+  <j:VehicleMakeCode>FORD</j:VehicleMakeCode>
+  <j:VehicleModelCode>150</j:VehicleModelCode>
+</ns1:PickupTruck>
