@@ -3,7 +3,7 @@ SHELL = /bin/bash -o pipefail -o nounset -o errexit
 
 this_makefile = ${lastword ${MAKEFILE_LIST}}
 
-targets = $(shell find . -type f ! -path './tmp/*' -a '(' -name '*.xsd.*.results.txt' -o -name 'test.*.bash' ')' -print)
+targets = $(shell find . -type f ! -path './tmp/*' -a '(' -name '*.results.txt' -o -name 'test.*.bash' ')' -print)
 
 tested_tokens_dir = tmp/tokens/tested
 reports_dir = tmp/reports
