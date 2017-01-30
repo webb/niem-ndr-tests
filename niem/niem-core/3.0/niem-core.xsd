@@ -105,6 +105,7 @@
         <xs:sequence>
           <xs:element ref="nc:VehicleMake" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="nc:VehicleModel" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:VehicleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -172,6 +173,11 @@
   <xs:element name="Vehicle" type="nc:VehicleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A conveyance designed to carry an operator, passengers and/or cargo, over land.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VehicleAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for VehicleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VehicleMake" abstract="true">

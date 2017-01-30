@@ -1,0 +1,7 @@
+12:successful-report:is-ctas-conformant-document
+12:successful-report:is-schema-doc
+12:successful-report:ns-valid
+12:successful-report:target-ns-is-rfc3986
+12:successful-report:well-formed-xml
+52:failed-assert:rule-code-type-name-suffix
+62:failed-assert:code-st-has-enum

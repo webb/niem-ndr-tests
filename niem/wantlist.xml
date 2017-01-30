@@ -95,6 +95,8 @@
       w:minOccurs="1" w:maxOccurs="1"/>
     <w:ElementInType w:name="nc:VehicleModel" w:isReference="false"
       w:minOccurs="1" w:maxOccurs="1"/>
+    <w:ElementInType w:name="nc:VehicleAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="ncic:HAICodeSimpleType" w:isRequested="false">
     <w:Facet w:facet="enumeration" w:value="BLD"/>
