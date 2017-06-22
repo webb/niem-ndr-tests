@@ -1,67 +1,39 @@
 
-text_file = default-and-fixed-modify-infoset.txt
-zip_file = default-and-fixed-modify-infoset.zip
+java = /usr/bin/java
 
-valid_tokens = \
-	tmp/xsd-valid/schema-default/instance \
-	tmp/xsd-valid/schema-fixed/instance \
-	tmp/xsd-valid/schema-default/instance-other \
-	tmp/xsd-valid/schema-fixed/instance-other \
-	tmp/xsd-valid/schema-fixed/instance-fixed \
+# invoke as:
+#   ${saxon} -xsd:schema-fixed.xsd -s:instance.xml -xsl:print.xsl -o:out.txt
 
-all: zip
+saxon = ${java} -cp ${HOME}/working/tools/share/saxon-ee-j/bin/saxon9ee.jar:${HOME}/working/tools/share/saxon-ee-j/bin/saxon9-sql.jar:${HOME}/working/tools/share/saxon-ee-j/licenses/2010-06-09 com.saxonica.Transform -val:strict
 
-text: ${text_file}
+.PHONY: default
+default: aufr
 
-%: %.roff
-	roffinate --out=$@ $<
+.PHONY: adf #  attribute decl fixed
+adf:
+	${saxon} -xsd:"envelope.xsd;attribute-decl-fixed.xsd" -s:instance-attribute-missing.xml -xsl:print.xsl
 
-results.txt: demo.bash instance.xml print.xsl schema-default.xsd schema-fixed.xsd
-	./demo.bash > results.txt 2>&1
+.PHONY: auf #  attribute use fixed
+auf:
+	${saxon} -xsd:"envelope.xsd;attribute-use-fixed.xsd" -s:instance-attribute-missing.xml -xsl:print.xsl
 
-.PHONY: zip
-zip: default-and-fixed-modify-infoset.zip
+.PHONY: aufr #  attribute use fixed required
+aufr:
+	${saxon} -xsd:"envelope.xsd;attribute-use-fixed-required.xsd" -s:instance-attribute-missing.xml -xsl:print.xsl
 
-${zip_file}: ${text_file} results.txt demo.bash instance.xml print.xsl schema-default.xsd schema-fixed.xsd
-	zip -9 $@ $^
+.PHONY: aufre #  attribute use fixed required empty
+aufre:
+	${saxon} -xsd:"envelope.xsd;attribute-use-fixed-required.xsd" -s:instance-attribute-empty.xml -xsl:print.xsl
 
-.PHONY: clean
-clean:
-	$(RM) ${wildcard *~} ${text_file} ${zip_file} results.txt
-	rm -rf tmp
+.PHONY: edc #  element decl complex
+edc:
+	${saxon} -xsd:"envelope.xsd;element-decl-complex.xsd" -s:instance-element-empty.xml -xsl:print.xsl
 
-.PHONY: valid
-valid: ${valid_tokens}
+.PHONY: euoe #  element use optional - empty
+euoe:
+	${saxon} -xsd:"envelope.xsd;element-use-optional.xsd" -s:instance-empty.xml -xsl:print.xsl
 
-tmp/xsd-valid/schema-default/instance: instance.xml xml-catalog-default.xml
-	xsdvalid -catalog xml-catalog-default.xml $<
-	@ mkdir -p ${dir $@}
-	@ touch $@
+.PHONY: ff #  facet fixed
+ff:
+	${saxon} -xsd:"envelope.xsd;facet-fixed.xsd" -s:instance-attribute.xml -xsl:print.xsl
 
-tmp/xsd-valid/schema-fixed/instance: instance.xml xml-catalog-fixed.xml
-	xsdvalid -catalog xml-catalog-fixed.xml $<
-	@ mkdir -p ${dir $@}
-	@ touch $@
-
-tmp/xsd-valid/schema-default/instance-other: instance-other.xml xml-catalog-default.xml
-	xsdvalid -catalog xml-catalog-default.xml $<
-	@ mkdir -p ${dir $@}
-	@ touch $@
-
-tmp/xsd-valid/schema-fixed/instance-other: instance-other.xml xml-catalog-fixed.xml
-	@echo Expect this to fail...
-	! xsdvalid -catalog xml-catalog-fixed.xml $<
-	@ echo ...as we expected
-	@ mkdir -p ${dir $@}
-	@ touch $@
-
-tmp/xsd-valid/schema-fixed/instance-fixed: instance-fixed.xml xml-catalog-fixed.xml
-	xsdvalid -catalog xml-catalog-fixed.xml $<
-	@ mkdir -p ${dir $@}
-	@ touch $@
-
-xml-catalog-default.xml: schema-default.xsd
-	touch $@
-
-xml-catalog-fixed.xml: schema-fixed.xsd
-	touch $@

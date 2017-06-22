@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/namespace"
+           xmlns:ns="http://example.org/namespace">
+
+<xs:element name="Vehicle" type="ns:VehicleType" fixed="Camry"/>
+
+<xs:complexType name="VehicleType">
+  <xs:sequence>
+    <xs:element ref="ns:Color"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="Color" type="xs:string"/>
+  
+</xs:schema>

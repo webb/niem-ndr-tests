@@ -1,6 +1,1 @@
-12:successful-report:is-ctas-conformant-document
-12:successful-report:is-schema-doc
-12:successful-report:ns-valid
-12:successful-report:target-ns-is-rfc3986
-12:successful-report:well-formed-xml
 30:failed-assert:no-at-fixed

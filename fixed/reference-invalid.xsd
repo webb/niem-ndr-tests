@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<xs:schema
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
+  targetNamespace="http://example.org/namespace/"
+  version="1"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/"
+  xmlns:ns="http://example.org/namespace/"
+  xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>This is a schema for namespace 1.</xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+
+  <xs:attribute name="weightMeasure" type="xs:decimal" fixed="1000">
+    <xs:annotation>
+      <xs:documentation>A weight of a vehicle</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="heightMeasure" type="xs:decimal">
+    <xs:annotation>
+      <xs:documentation>A height of a vehicle</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <xs:complexType name="VehicleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ns:PassengerCount" fixed="2"/>
+          <xs:element ref="ns:VehicleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="ns:weightMeasure" use="optional" fixed="1000"/>
+        <xs:attribute ref="ns:heightMeasure" use="required" fixed="1000"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="VehicleAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:simpleType name="VehicleWeightSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the weight of a vehicle</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0" fixed="yes"></xs:minInclusive>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="PassengerCount" type="niem-xs:integer" fixed="2" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of passengers</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>

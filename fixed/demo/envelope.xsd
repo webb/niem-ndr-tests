@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+   targetNamespace="http://example.org/envelope"
+   xmlns="http://www.w3.org/2001/XMLSchema">
+
+  <element name="envelope">
+    <complexType>
+      <sequence>
+        <any 
+            minOccurs="0" 
+            maxOccurs="unbounded" 
+            processContents="strict"
+            namespace="##any"/>
+      </sequence>
+      <anyAttribute namespace="##any" processContents="strict"/>
+    </complexType>
+  </element>
+</schema>

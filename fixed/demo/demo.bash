@@ -9,6 +9,9 @@ run () {
     "$@"
 }
 
+
+
+
 echo '#'
 echo '# validating against schema'
 echo '#'

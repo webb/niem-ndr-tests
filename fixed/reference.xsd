@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <xs:schema
-  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument"
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
   targetNamespace="http://example.org/ns1/"
   xmlns:ns1="http://example.org/ns1/"
   version="1"
@@ -8,7 +8,7 @@
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
-  xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:annotation>
