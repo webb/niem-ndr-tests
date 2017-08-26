@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
+  targetNamespace="http://example.org/namespace/"
+  version="1"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>This is a schema for a namespace.</xs:documentation>
+  </xs:annotation>
+
+  <xs:attribute name="things:_CountID" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>A number of things.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+</xs:schema>

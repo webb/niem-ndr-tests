@@ -9,11 +9,17 @@
   <template match="@structures:uri">
     <value-of>found uri &quot;<value-of select="string(.)"/>&quot;
    base-uri(.) is &quot;<value-of select="base-uri(.)"/>&quot;
-   resolve-uri(.) is &quot;<value-of select="resolve-uri(.)"/>&quot;
    resolve-uri(., base-uri(.)) is &quot;<value-of select="resolve-uri(., base-uri(.))"/>&quot;
 </value-of>
   </template>
-  
+
+  <template match="@structures:id">
+    <value-of>found id &quot;<value-of select="string(.)"/>&quot;
+   base-uri(.) is &quot;<value-of select="base-uri(.)"/>&quot;
+   resolve-uri(concat('#', .), base-uri(.)) is &quot;<value-of select="resolve-uri(concat('#', .), base-uri(.))"/>&quot;
+</value-of>
+  </template>
+
   <template match="@*|node()" priority="-1">
     <apply-templates select="@*|node()"/>
   </template>
