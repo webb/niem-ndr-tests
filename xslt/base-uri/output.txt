@@ -1,0 +1,4 @@
+found uri "#two"
+   base-uri(.) is "https://example.org/file.xml"
+   resolve-uri(.) is "file:/Users/wr/r/niem/ndr/tests/xslt/base-uri/get-uris.xsl#two"
+   resolve-uri(., base-uri(.)) is "https://example.org/file.xml#two"

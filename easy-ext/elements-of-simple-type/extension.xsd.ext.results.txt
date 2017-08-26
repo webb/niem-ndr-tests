@@ -1,8 +1,3 @@
-12:successful-report:is-ctas-conformant-document
-12:successful-report:is-schema-doc
-12:successful-report:ns-valid
-12:successful-report:target-ns-is-rfc3986
-12:successful-report:well-formed-xml
-21:failed-assert:el-type-conformant-ns
-21:failed-assert:el-type-not-st
-21:failed-assert:el-type-not-xs
+17:failed-assert:el-type-conformant-ns
+17:failed-assert:el-type-not-st
+17:failed-assert:el-type-not-xs

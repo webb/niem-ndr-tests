@@ -1,0 +1,9 @@
+<ns1:PickupTruck
+  xml:base="https://example.org/file.xml"
+  structures:uri="#two"
+  xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
+  xmlns:ns1="http://example.org/ns1/"
+  xmlns:structures="http://release.niem.gov/niem/structures/3.0/">
+  <j:VehicleMakeCode>FORD</j:VehicleMakeCode>
+  <j:VehicleModelCode>150</j:VehicleModelCode>
+</ns1:PickupTruck>

@@ -1,130 +1,4 @@
 #############################################################################
-# allow-all-chars/extension.xsd.ext.results.txt
-file allow-all-chars/extension.xsd.ext.results.txt -> rules ext on subject allow-all-chars/extension.xsd
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# allow-all-chars/extension.xsd.set.results.txt
-file allow-all-chars/extension.xsd.set.results.txt -> rules set on subject allow-all-chars/extension.xsd with XML catalog allow-all-chars/xml-catalog 
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# codes/instance.xml.valid.results.txt
-file codes/instance.xml.valid.results.txt -> schema validation of subject codes/instance.xml with XML catalog codes/xml-catalog
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# codes/reference.xsd.ref.results.txt
-file codes/reference.xsd.ref.results.txt -> rules ref on subject codes/reference.xsd
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# codes/reference.xsd.set.results.txt
-file codes/reference.xsd.set.results.txt -> rules set on subject codes/reference.xsd with XML catalog codes/xml-catalog 
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# easy-ext/anon-type/extension.xsd.ext.results.txt
-file easy-ext/anon-type/extension.xsd.ext.results.txt -> rules ext on subject easy-ext/anon-type/extension.xsd
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-fail stdout: Actual stdout differs from expected
-> --- easy-ext/anon-type/extension.xsd.ext.results.txt	2017-01-29 17:32:32.000000000 -0500
-> +++ /var/folders/wx/3t5kg66s1r10k3wpk78bwwxc0000gp/T/tmp.ACTUAL_STDOUT.aE0ew7	2017-01-30 10:49:12.000000000 -0500
-> @@ -1,8 +1,8 @@
-> -extension.xsd:12:successful-report:is-ctas-conformant-document
-> -extension.xsd:12:successful-report:is-schema-doc
-> -extension.xsd:12:successful-report:ns-valid
-> -extension.xsd:12:successful-report:target-ns-is-rfc3986
-> -extension.xsd:12:successful-report:well-formed-xml
-> -extension.xsd:21:failed-assert:el-type-conformant-ns
-> -extension.xsd:21:failed-assert:el-type-not-st
-> -extension.xsd:21:failed-assert:el-type-not-xs
-> +12:successful-report:is-ctas-conformant-document
-> +12:successful-report:is-schema-doc
-> +12:successful-report:ns-valid
-> +12:successful-report:target-ns-is-rfc3986
-> +12:successful-report:well-formed-xml
-> +21:failed-assert:el-with-no-type-is-abstract
-> +25:failed-assert:ct-has-dd
-> +25:failed-assert:ct-top-level
-fail stderr: Actual stderr differs from expected
-> --- /dev/null	2017-01-30 10:49:03.000000000 -0500
-> +++ /var/folders/wx/3t5kg66s1r10k3wpk78bwwxc0000gp/T/tmp.ACTUAL_STDERR.l7U84F	2017-01-30 10:49:09.000000000 -0500
-> @@ -0,0 +1,24 @@
-> +Recoverable error at xsl:template on line 4140 column 30 of ndr-rules-conformance-target-ext.sch.xsl:
-> +  XPTY0004: An error occurred matching pattern
-> +  {element(Q{http://www.w3.org/2001/XMLSchema}complexType)[let
-> +  $Q{http://saxon.sf.net/generated-variable}loc1362728240 := let
-> +  $Q{http://saxon.sf.net/generated-variable}loc1735507635 :=
-> +  QName("http://www.w3.org/2001/XMLSchema",
-> +  exactly-one(convertUntyped(data(attribute::attribute(Q{}name))))) return (some $extension
-> +  in child::element(Q{http://www.w3.org/2001/XMLSchema}simpleContent)/child::element(Q{http://www.w3.org/2001/XMLSchema}extension) satisfies (some $base-qname in resolve-QName(convertUntyped(data($extension/attribute::attribute(Q{}base))), $extension) satisfies ($base-qname eq $Q{http://saxon.sf.net/generated-variable}loc1735507635))) return (some $name in attribute::attribute(Q{}name) satisfies $Q{http://saxon.sf.net/generated-variable}loc1362728240)]}: An empty sequence is not allowed as the second argument of QName()
-> +Recoverable error at xsl:template on line 4757 column 30 of ndr-rules-conformance-target-ext.sch.xsl:
-> +  XPTY0004: An error occurred matching pattern
-> +  {element(Q{http://www.w3.org/2001/XMLSchema}complexType)[let
-> +  $Q{http://saxon.sf.net/generated-variable}loc678433396 := let
-> +  $Q{http://saxon.sf.net/generated-variable}loc922511709 :=
-> +  QName("http://www.w3.org/2001/XMLSchema",
-> +  exactly-one(convertUntyped(data(attribute::attribute(Q{}name))))) return (some $extension
-> +  in child::element(Q{http://www.w3.org/2001/XMLSchema}simpleContent)/child::element(Q{http://www.w3.org/2001/XMLSchema}extension) satisfies (some $base-qname in resolve-QName(convertUntyped(data($extension/attribute::attribute(Q{}base))), $extension) satisfies ($base-qname eq $Q{http://saxon.sf.net/generated-variable}loc922511709))) return (some $name in attribute::attribute(Q{}name) satisfies $Q{http://saxon.sf.net/generated-variable}loc678433396)]}: An empty sequence is not allowed as the second argument of QName()
-> +Recoverable error at xsl:template on line 4805 column 30 of ndr-rules-conformance-target-ext.sch.xsl:
-> +  XPTY0004: An error occurred matching pattern
-> +  {element(Q{http://www.w3.org/2001/XMLSchema}complexType)[let
-> +  $Q{http://saxon.sf.net/generated-variable}loc1647809929 := let
-> +  $Q{http://saxon.sf.net/generated-variable}loc928294079 :=
-> +  QName("http://www.w3.org/2001/XMLSchema",
-> +  exactly-one(convertUntyped(data(attribute::attribute(Q{}name))))) return (some $extension
-> +  in child::element(Q{http://www.w3.org/2001/XMLSchema}simpleContent)/child::element(Q{http://www.w3.org/2001/XMLSchema}extension) satisfies (some $base-qname in resolve-QName(convertUntyped(data($extension/attribute::attribute(Q{}base))), $extension) satisfies ($base-qname eq $Q{http://saxon.sf.net/generated-variable}loc928294079))) return (some $name in attribute::attribute(Q{}name) satisfies $Q{http://saxon.sf.net/generated-variable}loc1647809929)]}: An empty sequence is not allowed as the second argument of QName()
-fail
-#############################################################################
-# easy-ext/anon-type/extension.xsd.set.results.txt
-file easy-ext/anon-type/extension.xsd.set.results.txt -> rules set on subject easy-ext/anon-type/extension.xsd with XML catalog easy-ext/anon-type/xml-catalog 
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# easy-ext/anon-type/instance.xml.valid.results.txt
-file easy-ext/anon-type/instance.xml.valid.results.txt -> schema validation of subject easy-ext/anon-type/instance.xml with XML catalog easy-ext/anon-type/xml-catalog
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# easy-ext/elements-of-simple-type/extension.xsd.ext.results.txt
-file easy-ext/elements-of-simple-type/extension.xsd.ext.results.txt -> rules ext on subject easy-ext/elements-of-simple-type/extension.xsd
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
-# easy-ext/elements-of-simple-type/instance.xml.valid.results.txt
-file easy-ext/elements-of-simple-type/instance.xml.valid.results.txt -> schema validation of subject easy-ext/elements-of-simple-type/instance.xml with XML catalog easy-ext/elements-of-simple-type/xml-catalog
-exit status: 0
-pass exit status: Expected exit status 0, got 0
-pass stdout: Actual stdout same as expected
-pass stderr: Actual stderr same as expected
-pass
-#############################################################################
 # fixed/instance.xml.valid.results.txt
 file fixed/instance.xml.valid.results.txt -> schema validation of subject fixed/instance.xml with XML catalog fixed/xml-catalog
 exit status: 0
@@ -145,6 +19,14 @@ pass
 file fixed/reference.xsd.set.results.txt -> rules set on subject fixed/reference.xsd with XML catalog fixed/xml-catalog 
 exit status: 0
 pass exit status: Expected exit status 0, got 0
+pass stdout: Actual stdout same as expected
+pass stderr: Actual stderr same as expected
+pass
+#############################################################################
+# fixed/test.reference-invalid.xsd.ref.bash
+file fixed/test.reference-invalid.xsd.ref.bash -> running in dir "fixed"
+exit status: 1
+pass exit status: Expected exit status 1, got 1
 pass stdout: Actual stdout same as expected
 pass stderr: Actual stderr same as expected
 pass
